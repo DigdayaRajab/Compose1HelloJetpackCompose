@@ -91,7 +91,7 @@ fun GreetingList(names: List<String>) {
 //                Greeting(name)
 //            }
 //        }
-        // migrated to LazyColumn
+        // migrated to LazyColumn       -> for powerful display layout
 
         LazyColumn{
             items(names) { name ->
@@ -106,7 +106,7 @@ fun GreetingList(names: List<String>) {
 }
 
 @Preview(name = "List Data Case", showBackground = true, device = Devices.PIXEL_4)
-@Preview(name = "List Data Case", showBackground = true, device = Devices.PIXEL_4, uiMode = UI_MODE_NIGHT_YES)
+@Preview(name = "List Data Case Night Mode", showBackground = true, device = Devices.PIXEL_4, uiMode = UI_MODE_NIGHT_YES)
 @Composable
 fun ContainerListPreview() {
     Compose1HelloJetpackComposeTheme {
@@ -115,7 +115,7 @@ fun ContainerListPreview() {
 }
 
 
-// for single item
+// single item
 @Composable
 fun Greeting(name: String) {
 
@@ -134,7 +134,7 @@ fun Greeting(name: String) {
         )
     )
 
-//    Pretty UI Case
+//    Pretty UI Case        -> work with Type.kt, Shape.kt, Theme.kt, Color.kt
     Card(
         backgroundColor = MaterialTheme.colors.primary,     // with Color.kt
         shape = MaterialTheme.shapes.medium,                // with Shape.kt
@@ -148,7 +148,7 @@ fun Greeting(name: String) {
             Image(
                 painter = painterResource(R.drawable.avatar_kagura),
                 contentDescription = "Avatar Kagura",
-                modifier = Modifier.size(animatedSizeDp),
+                modifier = Modifier.size(animatedSizeDp),   //animation case
 
             )
             Spacer(modifier = Modifier.width(8.dp))
@@ -178,8 +178,8 @@ fun Greeting(name: String) {
     }
 }
 
-@Preview(showBackground = true)
-@Preview(name="Single Data Case" ,showBackground = true, uiMode = UI_MODE_NIGHT_YES)
+@Preview(name="Single Data Case", showBackground = true)
+@Preview(name="Single Data Case Night Mode" ,showBackground = true, uiMode = UI_MODE_NIGHT_YES) //whit Theme.kt
 @Composable
 fun DefaultPreview() {
     Compose1HelloJetpackComposeTheme {
